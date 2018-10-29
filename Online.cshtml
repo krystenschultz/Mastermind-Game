@@ -1,0 +1,551 @@
+﻿@Scripts.Render("~/bundles/jquery")
+@section scripts{
+    <link href="@Url.Content("~/Content/Mastermind.css")" rel="stylesheet" type="text/css" />
+}
+
+@{
+    Layout = "~/Views/Mastermind/_MastermindLayout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Mastermind Online";
+}
+
+<div class="page-title mastermind-title">
+    <h2>@ViewBag.Title</h2>
+</div>
+
+<div class="pad-10px"></div>
+
+<div class="mastermind-content scrollbar-ripe-malinka2">
+    <div class="tables">
+        <table class="user-input user-input">
+            <tbody>
+                <tr class="user-input-light">
+                    <th scope="row"></th>
+                    <td value="00" colnum="0" class="rnd" id="rnd1">
+                        Round 1
+                    </td>
+                    <td value="0" colnum="1"><div class="pop"></div></td>
+                    <td value="0" colnum="2"><div class="pop"></div></td>
+                    <td value="0" colnum="3"><div class="pop"></div></td>
+                    <td value="0" colnum="4"><div class="pop"></div></td>
+                    <td class="empty-cell"></td>
+                    <td colnum-response="1" cvalue="0"></td>
+                    <td colnum-response="2" cvalue="0"></td>
+                    <td colnum-response="3" cvalue="0"></td>
+                    <td colnum-response="4" cvalue="0"></td>
+                </tr>
+
+                <tr class="user-input-light">
+                    <th scope="row"></th>
+                    <td value="00" colnum="0" class="rnd" id="rnd2">
+                        Round 2
+                    </td>
+                    <td value="0" colnum="1"><div class="pop"></div></td>
+                    <td value="0" colnum="2"><div class="pop"></div></td>
+                    <td value="0" colnum="3"><div class="pop"></div></td>
+                    <td value="0" colnum="4"><div class="pop"></div></td>
+                    <td class="empty-cell"></td>
+                    <td colnum-response="1" cvalue="0"></td>
+                    <td colnum-response="2" cvalue="0"></td>
+                    <td colnum-response="3" cvalue="0"></td>
+                    <td colnum-response="4" cvalue="0"></td>
+                </tr>
+
+                <tr class="user-input-light">
+                    <th scope="row"></th>
+                    <td value="00" colnum="0" class="rnd" id="rnd3">
+                        Round 3
+                    </td>
+                    <td value="0" colnum="1"><div class="pop"></div></td>
+                    <td value="0" colnum="2"><div class="pop"></div></td>
+                    <td value="0" colnum="3"><div class="pop"></div></td>
+                    <td value="0" colnum="4"><div class="pop"></div></td>
+                    <td class="empty-cell"></td>
+                    <td colnum-response="1" cvalue="0"></td>
+                    <td colnum-response="2" cvalue="0"></td>
+                    <td colnum-response="3" cvalue="0"></td>
+                    <td colnum-response="4" cvalue="0"></td>
+                </tr>
+
+
+                <tr class="user-input-light">
+                    <th scope="row"></th>
+                    <td value="00" colnum="0" class="rnd" id="rnd4">
+                        Round 4
+                    </td>
+                    <td value="0" colnum="1"><div class="pop"></div></td>
+                    <td value="0" colnum="2"><div class="pop"></div></td>
+                    <td value="0" colnum="3"><div class="pop"></div></td>
+                    <td value="0" colnum="4"><div class="pop"></div></td>
+                    <td class="empty-cell"></td>
+                    <td colnum-response="1" cvalue="0"></td>
+                    <td colnum-response="2" cvalue="0"></td>
+                    <td colnum-response="3" cvalue="0"></td>
+                    <td colnum-response="4" cvalue="0"></td>
+                </tr>
+
+
+                <tr class="user-input-light">
+                    <th scope="row"></th>
+                    <td value="00" colnum="0" class="rnd" id="rnd5">
+                        Round 5
+                    </td>
+                    <td value="0" colnum="1"><div class="pop"></div></td>
+                    <td value="0" colnum="2"><div class="pop"></div></td>
+                    <td value="0" colnum="3"><div class="pop"></div></td>
+                    <td value="0" colnum="4"><div class="pop"></div></td>
+                    <td class="empty-cell"></td>
+                    <td colnum-response="1" cvalue="0"></td>
+                    <td colnum-response="2" cvalue="0"></td>
+                    <td colnum-response="3" cvalue="0"></td>
+                    <td colnum-response="4" cvalue="0"></td>
+                </tr>
+
+                <tr class="user-input-light">
+                    <th scope="row"></th>
+                    <td value="00" colnum="0" class="rnd" id="rnd6">
+                        Round 6
+                    </td>
+                    <td value="0" colnum="1"><div class="pop"></div></td>
+                    <td value="0" colnum="2"><div class="pop"></div></td>
+                    <td value="0" colnum="3"><div class="pop"></div></td>
+                    <td value="0" colnum="4"><div class="pop"></div></td>
+                    <td class="empty-cell"></td>
+                    <td colnum-response="1" cvalue="0"></td>
+                    <td colnum-response="2" cvalue="0"></td>
+                    <td colnum-response="3" cvalue="0"></td>
+                    <td colnum-response="4" cvalue="0"></td>
+                </tr>
+
+                <tr class="user-input-light">
+                    <th scope="row"></th>
+                    <td value="00" colnum="0" class="rnd" id="rnd7">
+                        Round 7
+                    </td>
+                    <td value="0" colnum="1"><div class="pop"></div></td>
+                    <td value="0" colnum="2"><div class="pop"></div></td>
+                    <td value="0" colnum="3"><div class="pop"></div></td>
+                    <td value="0" colnum="4"><div class="pop"></div></td>
+                    <td class="empty-cell"></td>
+                    <td colnum-response="1" cvalue="0"></td>
+                    <td colnum-response="2" cvalue="0"></td>
+                    <td colnum-response="3" cvalue="0"></td>
+                    <td colnum-response="4" cvalue="0"></td>
+                </tr>
+
+                <tr class="user-input-light">
+                    <th scope="row"></th>
+                    <td value="00" colnum="0" class="rnd" id="rnd8">
+                        Round 8
+                    </td>
+                    <td value="0" colnum="1"><div class="pop"></div></td>
+                    <td value="0" colnum="2"><div class="pop"></div></td>
+                    <td value="0" colnum="3"><div class="pop"></div></td>
+                    <td value="0" colnum="4"><div class="pop"></div></td>
+                    <td class="empty-cell"></td>
+                    <td colnum-response="1" cvalue="0"></td>
+                    <td colnum-response="2" cvalue="0"></td>
+                    <td colnum-response="3" cvalue="0"></td>
+                    <td colnum-response="4" cvalue="0"></td>
+                </tr>
+
+                <tr class="user-input-light">
+                    <th scope="row"></th>
+                    <td value="00" colnum="0" class="rnd" id="rnd9">
+                        Round 9
+                    </td>
+                    <td value="0" colnum="1"><div class="pop"></div></td>
+                    <td value="0" colnum="2"><div class="pop"></div></td>
+                    <td value="0" colnum="3"><div class="pop"></div></td>
+                    <td value="0" colnum="4"><div class="pop"></div></td>
+                    <td class="empty-cell"></td>
+                    <td colnum-response="1" cvalue="0"></td>
+                    <td colnum-response="2" cvalue="0"></td>
+                    <td colnum-response="3" cvalue="0"></td>
+                    <td colnum-response="4" cvalue="0"></td>
+                </tr>
+
+                <tr class="user-input-light">
+                    <th scope="row"></th>
+                    <td value="00" colnum="0" class="rnd" id="rnd10">
+                        Round 10
+                    </td>
+                    <td value="0" colnum="1"><div class="pop"></div></td>
+                    <td value="0" colnum="2"><div class="pop"></div></td>
+                    <td value="0" colnum="3"><div class="pop"></div></td>
+                    <td value="0" colnum="4"><div class="pop"></div></td>
+                    <td class="empty-cell"></td>
+                    <td colnum-response="1" cvalue="0"></td>
+                    <td colnum-response="2" cvalue="0"></td>
+                    <td colnum-response="3" cvalue="0"></td>
+                    <td colnum-response="4" cvalue="0"></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <table class="user-input user-input" style="padding-top: 10px !important">
+            <tbody>
+                <tr class="user-input-light master-box">
+                    <th scope="row"></th>
+                    <td value="0" colnum="0">
+                        Answer
+                    </td>
+                    <td value="8" colnum="1" id="mcode1"></td>
+                    <td value="8" colnum="2" id="mcode2"></td>
+                    <td value="8" colnum="3" id="mcode3"></td>
+                    <td value="8" colnum="4" id="mcode4"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="not-visible" id="end-feedback">:)</div>
+
+        <div class="pad-10px"></div>
+
+        <div class="game-buttons">
+            <button class="new-rnd btn">Next Round</button>
+            <button class="new-game btn">New Game</button>
+            <button class="game-rules btn">How to Play</button>
+        </div>
+
+    </div>
+
+</div>
+
+@*Rules Modal*@
+<div id="myModal" class="modal">
+
+    @*Modal content*@
+    <div class="modal-content-1 scrollbar-ripe-malinka3">
+        <div class="line-up">
+            <span class="close">&times;</span>
+        </div>
+        <div class="line-up">
+            <h4>How to Play</h4>
+            Welcome to Mastermind! In this game, JavaScript code has told your browser to generate a random 4-color code to be it's Master Key--the cells hidden under this bar:
+            <table class="user-input user-input" style="padding-top: 4px; padding-bottom: 12px">
+                <tbody>
+                    <tr class="user-input-light master-box" style="height: 35px">
+                        <th scope="row"></th>
+                        <td value="8" colnum="1" id="mcode1">?</td>
+                        <td value="8" colnum="2" id="mcode2">?</td>
+                        <td value="8" colnum="3" id="mcode3">?</td>
+                        <td value="8" colnum="4" id="mcode4">?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            To uncover it and win, you need to guess all 4 colors in the correct order.
+            There are 10 rounds, so you only have 10 chances to get it right!
+            Each cell of the 4-color code can be one of 6 possible colors (pink, orange, yellow, green, blue, or grey), and colors can be repeated. For example, your browser's randomly-generated Master Code might be:
+
+
+            <table class="user-input user-input" style="padding-top: 4px; padding-bottom: 12px">
+                <tbody>
+                    <tr>
+                        <th scope="row"></th>
+                        <td style="padding:0px">Cell 1</td>
+                        <td style="padding:0px">Cell 2</td>
+                        <td style="padding:0px">Cell 3</td>
+                        <td style="padding:0px">Cell 4</td>
+                    </tr>
+                    <tr class="user-input-light master-box" style="height: 35px">
+                        <th scope="row"></th>
+                        <td value="1" colnum="1" id="mcode1"></td>
+                        <td value="6" colnum="2" id="mcode2"></td>
+                        <td value="2" colnum="3" id="mcode3"></td>
+                        <td value="1" colnum="4" id="mcode4"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            Begin the first Round by selecting any combination of 4 colors you would like. When you are ready, click "Next Round" to submit your guess. The browser will then run a series of JavaScript functions to determine how many colors you got right! Feedback on your guess shows up in the bar to the right of your code. It may look something like this:
+
+            <table class="user-input user-input" style="padding-top: 4px; padding-bottom: 6px">
+                <tbody>
+                    <tr class="user-input-light" style="height: 35px">
+                        <th scope="row"></th>
+                        <td colnum-response="1" cvalue="2"></td>
+                        <td colnum-response="2" cvalue="1"></td>
+                        <td colnum-response="3" cvalue="0"></td>
+                        <td colnum-response="4" cvalue="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Green means you have 1 cell with the correct color in it. Yellow means you have 1 color that is correct but it's not in the right cell.
+            </p>
+
+            For example, given this scenario...
+
+            <div class="guess">
+                Hidden Master Code:
+                <table class="user-input user-input" style="padding-top: 4px; padding-bottom: 12px">
+                    <tbody>
+                        <tr class="user-input-light master-box" style="height: 35px">
+                            <th scope="row"></th>
+                            <td value="1" colnum="1" id="mcode1"></td>
+                            <td value="6" colnum="2" id="mcode2"></td>
+                            <td value="2" colnum="3" id="mcode3"></td>
+                            <td value="1" colnum="4" id="mcode4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                Player's Guess:
+                <table class="user-input user-input" style="padding-top: 4px; padding-bottom: 12px">
+                    <tbody>
+                        <tr class="user-input-light master-box" style="height: 35px">
+                            <th scope="row"></th>
+                            <td value="2" colnum="1" id="mcode1"></td>
+                            <td value="6" colnum="2" id="mcode2"></td>
+                            <td value="1" colnum="3" id="mcode3"></td>
+                            <td value="4" colnum="4" id="mcode4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            ...the browser would give this feedback:
+
+            <table class="user-input user-input guess" style="padding-top: 4px; padding-bottom: 6px">
+                <tbody>
+                    <tr class="user-input-light" style="height: 35px">
+                        <th scope="row"></th>
+                        <td colnum-response="1" cvalue="2"></td>
+                        <td colnum-response="2" cvalue="1"></td>
+                        <td colnum-response="3" cvalue="1"></td>
+                        <td colnum-response="4" cvalue="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>This says there is 1 cell with the correct color (it's the second cell--grey) and two colors that are correct but in the wrong cell (pink and orange).</p>
+            
+            <p><b>Important!</b> The positions of green and yellow in the feedback bar do NOT necessarily correspond to the order of the colors in your guess. So a green in the FIRST cell of the feedback bar does not necessarily mean that the FIRST cell of your code was correct. It only tells you that one of the 4 cells in your code was correct--not which one.</p>
+
+            <p>Keep submitting guesses until you get the Master Code right or run out of rounds.</p>
+            
+            <p><h5 style="padding-top: 4px">Good luck!</h5></p>
+
+            <h7>Credit for the idea behind this game belonds to Mordecai Meirowitz--the original creator of Mastermind.</h7>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+
+    var playerCode = [0, 0, 0, 0];
+    var masterCode = [0, 0, 0, 0];
+    var zeros = 0
+    var greenCorrect = 0
+    var yellowCorrect = 0
+    var theyWon = 0
+
+    var popcolor = '<div class="popcolor"> \
+                         Select \
+                         <span class="popupcolor circle-container"> \
+                                <button class="pop-btn-1 deg0" onclick="setColor(1, this)"></button> \
+                                <button class="pop-btn-2 deg45" onclick ="setColor(2, this)"></button> \
+                                <button class="pop-btn-3 deg135" onclick="setColor(3, this)"></button> \
+                                <button class="pop-btn-4 deg180" onclick="setColor(4, this)"></button> \
+                                <button class="pop-btn-5 deg225" onclick="setColor(5, this)"></button> \
+                                <button class="pop-btn-6 deg315" onclick="setColor(6, this)"></button> \
+                        </span> \
+                    </div>';
+
+
+    /*Set round*/
+    var CurrentRnd = "1";
+
+    /*Initialize page*/
+    var popElems = document.getElementsByClassName('pop');
+    document.getElementById('rnd' + CurrentRnd).classList.add('rnd-halo');
+    for (var i = 0; i < popElems.length; i++) {
+        popElems[i].innerHTML = popcolor;
+    };
+    for (var i = 4; i < popElems.length; i++) {
+        popElems[i].firstChild.classList.add('display-none');
+    };
+    randomize();
+
+
+    /*Randomize master code*/
+    function randomize() {
+        for (i = 0; i < 4; i++) {
+            masterCode[i] = Math.floor(Math.random() * 6) + 1
+        };
+    };
+
+    /*Start new game*/
+    $('.new-game').on('click', function () {
+        document.location.reload(true);
+    })
+
+    /*Show game rules*/
+    $('.game-rules').on('click', function () {
+        var modal = document.getElementById('myModal');
+        modal.style.display = "block";
+    })
+
+    // When the user clicks on <span> (x), close the rules
+    var span = document.getElementsByClassName('close')[0];
+    span.onclick = function () {
+        var modal = document.getElementById('myModal');
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the rules modal, close it
+    window.onclick = function (event) {
+        var modal = document.getElementById('myModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    /*Show color bubbles*/
+    $('.popcolor').on('click', function (event) {
+        event.stopImmediatePropagation();
+        if ($(this).children().hasClass('show')) {
+            $('.popupcolor').removeClass('show');
+            $(this).children().removeClass('show');
+        }
+        else {
+            $('.popupcolor').removeClass('show');
+            /*Come to me my children*/
+            $(this).children().toggleClass('show');
+        };
+    });
+
+    /*Set color to user choice*/
+    function setColor(color, esto) {
+        $(esto).parent().parent().parent().parent().attr('value', color);
+        var colnum = $(esto).parent().parent().parent().parent().attr('colnum');
+        playerCode[colnum - 1] = color;
+    };
+
+    /*New round*/
+    $('.new-rnd').on('click', function (q) {
+        zeros = 0
+        playerCode = [0, 0, 0, 0]
+        q.stopImmediatePropagation();
+        retrievePlayerKey()
+        checkForZeros()
+        if (zeros == 1) {
+            alert('Please select a color for every cell on Round ' + CurrentRnd + '.')
+            return;
+        }
+        compareToMaster()
+        feedbackOnCode()
+        var popElems = document.getElementsByClassName('pop');
+        $('.rnd').removeClass('rnd-halo');
+        if (CurrentRnd == 10) {
+            for (var i = (CurrentRnd * 4) - 4; i < CurrentRnd * 4; i++) {
+                popElems[i].classList.add('display-none');
+                reveal();
+                if (theyWon != 1) {
+                    loss = document.getElementById('end-feedback')
+                    $(loss).removeClass('not-visible')
+                    loss.innerHTML = "Better luck next time!"
+                }
+            };
+        };
+        if (CurrentRnd < 10) {
+            for (var i = (CurrentRnd * 4) - 4; i < CurrentRnd * 4; i++) {
+                popElems[i].classList.add('display-none');
+            };
+            if (theyWon == 1) {
+                return;
+            }
+            CurrentRnd++;
+            document.getElementById('rnd' + CurrentRnd).classList.add('rnd-halo');
+            for (var i = (CurrentRnd * 4) - 4; i < CurrentRnd * 4; i++) {
+                popElems[i].children[0].classList.remove('display-none');
+            };
+        }
+    });
+
+    /*Get player key*/
+    function retrievePlayerKey() {
+        currentRow = document.getElementById('rnd' + CurrentRnd);
+        for (i = 0; i < 4; i++) {
+            playerSelection = currentRow.parentElement.children[i + 2].getAttribute('value')
+            playerCode[i] = playerSelection
+        }
+    }
+
+    /*If player key contains zeros, ask to fill all cells*/
+    function checkForZeros() {
+        for (i = 0; i < 4; i++) {
+            if (playerCode[i] == 0) {
+                zeros = 1
+            }
+        }
+    }
+
+    /*Find how much of player key matches master key*/
+    function compareToMaster() {
+        var masterTemp = [0, 0, 0, 0]
+        for (i = 0; i < 4; i++) {
+            masterTemp[i] = masterCode[i]
+        }
+        greenCorrect = 0
+        yellowCorrect = 0
+        for (i = 0; i < 4; i++) {
+            if (masterTemp[i] == playerCode[i]) {
+                masterTemp[i] = 0
+                playerCode[i] = 7
+                greenCorrect++
+            }
+        }
+        for (i = 0; i < 4; i++) {
+            for (j = 0; j < 4; j++) {
+                if (masterTemp[i] == playerCode[j]) {
+                    masterTemp[i] = 0
+                    playerCode[j] = 7
+                    yellowCorrect++
+                }
+            }
+        }
+    }
+
+    /*Give feedback to player on their code*/
+    function feedbackOnCode() {
+        currentRow = document.getElementById('rnd' + CurrentRnd);
+        for (i = 1; i <= greenCorrect; i++) {
+            currentRow.parentElement.children[i + 6].setAttribute('cvalue', 2)
+        }
+        if (yellowCorrect > 0) {
+            for (i = greenCorrect; i <= greenCorrect + yellowCorrect - 1; i++) {
+                currentRow.parentElement.children[i + 7].setAttribute('cvalue', 1)
+            }
+        }
+        if (greenCorrect == 4) {
+            theyWon = 1
+            reveal()
+            winner = document.getElementById('end-feedback')
+            $(winner).removeClass('not-visible')
+            winner.innerHTML = "You win! Congratulations!!"
+        }
+    }
+
+    /*Reveal master key*/
+    function reveal() {
+        for (i = 1; i <= 4; i++) {
+            var mcode = document.getElementById('mcode' + i);
+            $(mcode).attr('value', masterCode[i - 1]);
+        };
+    };
+
+
+</script>
+
